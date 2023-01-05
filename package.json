@@ -1,0 +1,42 @@
+{
+  "name": "html-started-parcel",
+  "description": "A static HTML, CSS, JS boilerplate generator built with Parcel.",
+  "version": "0.2.0",
+  "source": "src/index.html",
+  "author": "AnhNNP <anhnnp.hdn.vn@gmail.com>",
+  "keywords": [
+    "html",
+    "boilerplate",
+    "html-boilerplate",
+    "front-end",
+    "generator",
+    "parcel"
+  ],
+  "scripts": {
+    "start": "parcel src/*.html --dist-dir public",
+    "build": "parcel build src/*.html --dist-dir public --public-url ./",
+    "clean": "rm -rf public/* && rm -rf .parcel-cache",
+    "lint": "yarn run lint:js && yarn run lint:css",
+    "lint:js": "eslint ./src --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "lint:css": "stylelint **/*.scss",
+    "format": "prettier --write ./src --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": "yarn lint:js",
+    "*.scss": "yarn lint:css"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.2",
+    "parcel": "^2.0.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard-scss": "^3.0.0"
+  },
+  "dependencies": {}
+}
